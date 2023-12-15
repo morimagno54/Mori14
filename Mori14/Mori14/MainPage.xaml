@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mori14.MainPage">
+
+    <StackLayout>
+        <Entry Placeholder="Enter Date" x:Name="txtDate" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Enter Client" x:Name="txtClient" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Enter Total" x:Name="txtTotal" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Enter Seller" x:Name="txtSeller" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Clicked="Button_Clicked"/>
+            <Button Text="Show" Clicked="Button_Clicked_1"/>
+
+        </StackLayout>
+        <Entry Placeholder="Filter" x:Name="txtFilter" HorizontalOptions="FillAndExpand"/>
+        <Button Text="ShowByText" Clicked="Button_Clicked_2"/>
+
+        <ListView x:Name="lvPurchases">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Date}"></Label>
+                            <Label Text="{Binding Client}"></Label>
+                            <Label Text="{Binding Total}"></Label>
+                            <Label Text="{Binding Seller}"></Label>
+                            <!--<Label Text="{Binding FirstName}"></Label>
+                            <Label Text="{Binding LastName}"></Label>-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
